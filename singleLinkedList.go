@@ -1,4 +1,4 @@
-package main
+package singleLinkedList
 
 import "fmt"
 
@@ -57,14 +57,4 @@ func (list *List) Insert(data interface{}) {
 		list.Tail = &newElement
 		*list.Length++
 	}
-}
-func main() {
-	list := newList()
-	list.Insert("TEST")
-	list.Insert("Test 2")
-	fmt.Println("Head: ", *list.Head)
-	fmt.Println("Tail: ", *list.Tail)
-	fmt.Println("Length: ", *list.Length)
-	items := list.Items()
-	fmt.Println("Items: ", items)
 }
