@@ -17,3 +17,12 @@ func TestListInsert(t *testing.T) {
 		t.Fatalf("Insert Failed :l.Len() = %d, want %d", l.Len(), 1)
 	}
 }
+
+func TestListGet(t *testing.T) {
+	l := NewList()
+	l.Insert("TEST")
+	_, err := l.Get(0)
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
+}

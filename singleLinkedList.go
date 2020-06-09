@@ -1,6 +1,9 @@
 package singleLinkedList
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type List struct {
 	Head   *ListElement
@@ -42,6 +45,7 @@ func (list *List) Items() string {
 }
 
 // Insert an item into a List
+// Inserting 'interface{}' works, but could be better?
 func (list *List) Insert(data interface{}) {
 	newElement := ListElement{&data, nil}
 	if list.Len() == 0 {
@@ -57,4 +61,11 @@ func (list *List) Insert(data interface{}) {
 		list.Tail = &newElement
 		*list.Length++
 	}
+}
+
+// Return the data for a ListElement at a List index
+func (list *List) Get(index int) (interface{}, error) {
+	err := errors.New("List.Get() not implemented.")
+
+	return nil, err
 }
