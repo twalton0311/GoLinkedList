@@ -12,7 +12,7 @@ type ListElement struct {
 	Next *ListElement
 }
 
-func newList() List {
+func NewList() List {
 	list := List{}
 	len := 0
 	list.Length = &len
